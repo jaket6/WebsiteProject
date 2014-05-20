@@ -1,0 +1,1 @@
+This is the First project uploaded to Git. It contains updated versions of my website jaketsuyemura.com . I will be playing around with the html/css formatting along with vreating some other hmtl pages.
