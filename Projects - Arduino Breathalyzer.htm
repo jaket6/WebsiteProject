@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)file:///C:/Users/Jake/Website/Projects%20-%20Arduino%20Breathalyzer.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projects - Arduino Breathalyzer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="file:///C:/Users/Jake/Website/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="file:///C:/Users/Jake/Website/css/business-casual.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="brand">Projects</div>
+    <div class="address-bar">Hardware | Software | Design | Hobby</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="file:///E:/Bootstrap/business-casual/index.html">Business Casual</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="file:///C:/Users/Jake/Website/index.html">Home</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/About.htm">About</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/Projects.htm">Projects</a>
+                    </li>
+                    
+
+<li><a href="file:///C:/Users/Jake/Website/contactpage.htm">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                
+                <div class="col-lg-12 text-center">
+                    <img class="img-responsive img-border img-full" src="./Projects - Arduino Breathalyzer_files/Outlets.jpg" alt="">
+                    <h2>Arduino Breathalyzer<br>
+                        <small>November 8, 2014</small>
+                    </h2>
+                    <p align="justify">How much is too much? It's a common question we ask ourselves, 
+  especially in the college environment. When it comes to alcohol, we tend to
+  disregard the voice of reason in our heads in favor of creating a memorable
+  (sometimes impossible-to-remember) experience. You'd think that a bunch of 18-22
+  year-olds would be the worst offenders, and you would be correct. But, second 
+place should be awarded to the middle-aged working man. The corporate 
+representative who's been forced to attend a college banquet because the 
+higher-ups can't be bothered to go. The only redeeming quality of this Tuesday 
+night held hostage is the promise of a little entertainment (via student
+organization booths), a free meal, and of course, and open bar.
+<br><br></p>
+
+<p align="justify">This is where the idea of the Arduino Breathalyzer project 
+  originated. The 2013 Holmescoming Banquet.<br><br></p>
+
+
+
+<p align="justify">Every student organization was expected to host a booth which 
+  displayed the skills and knowledge acquired from the College of Engineering's
+  curriculum. The “best” booth would be awarded an extra $400 to spend at their
+  discretion. Being a member of the IEEE student branch, it was my job to create
+  a project which utilized the skills we have gained through EE while also
+  providing entertainment for our generous guests.<br><br></p><p align="justify">Knowing that an open bar was the main draw of the event, 
+  settling on a visual breathalyzer display came about naturally and, with 
+  the help of some other IEEE members, we were able to create a winning 
+  project.<br><br></p>
+
+
+
+                    
+                    
+
+<h3>Design<br>
+                        
+                    </h3>
+
+<p align="justify"><br>After designing a rough concept for this project, it was
+  important to find hardware which was capable of meeting all of our requirements.
+  We wanted to measure the alcohol levels of the guests and display it in
+  visually pleasing fashion. Christmas lights were chosen as our medium
+  (since flashing lights scream EE). Now, finding a sensor that could detect 
+  the user's alcohol levels became a priority. Luckily, a breakout board for 
+  a similar project was available online which utilized an affordable MQ-3
+  Alcohol Gas Sensor. The DrinkShield Board was only compatible with an Arduino
+  Uno which effectively ended our search for a microcontroller.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - Arduino Breathalyzer_files/DrinkShield.jpg" alt="">
+
+<p align="justify"><br>Now that we could sense alcohol levels, we needed to
+  consider our options regarding the array of Christmas lights. The Arduino's
+  output pins are limited to 5 Volts DC at 40 milliAmps. This is nowhere near
+  the 120Volts AC the Christmas lights ran off of. We would require “wall outlet” 
+  levels of power to operate the array of lights.
+  <br><br></p><p align="justify"><br>
+To control the switching of these lights, power to the outlets would need to be
+  variable. Two states of On and Off would suffice. These specifications led us
+  to select relays as our source of power control. The mechanical relay switches
+  we selected were compatible with a variety of microcontrollers. It operated on
+  digital logic of 5 Volts, matching the Arduino's output range while requiring
+  only 5 Volts of power to activate the internal switches. This compatibility 
+  between the two systems made it easy to integrate into the working project.
+  <br><br></p>
+<img class="img-responsive img-border img-full" src="./Projects - Arduino Breathalyzer_files/Relays.jpg" alt="">
+<p align="justify"><br>Next, a wiring scheme had to be designed to make distribute power 
+  across the 8-channel relays. A LOW input signal would activate the internal mechanical 
+  switch, completing the circuit and allowing power to flow to the outlet receptacle.
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - Arduino Breathalyzer_files/CircuitSchematic.jpg" alt="">
+<img class="img-responsive img-border img-full" src="./Projects - Arduino Breathalyzer_files/Wiring.jpg" alt="">
+<p align="justify"><br>Everything was assembled and the connections were double checked. 
+  The “hot” line was connected to the red wires which were in series with the relays. The
+  green wires exiting the relays were connected to the outlet receptacles. The power would
+  then flow through the plugged-in Christmas lights and the circuit would complete through
+  ground (black).  The relays, at any time, could be switched On or Off from the microcontroller. 
+  This state would then be mirrored by the string of lights, giving us the power to make 
+  them flash/flicker on command.<br><br></p><p align="justify"><br>Now, All that was left was a quick coat of paint and the
+  addition of the IEEE logo. <br><br></p>
+
+
+<img class="img-responsive img-border img-full" src="./Projects - Arduino Breathalyzer_files/Breathalyzerfull.jpg" alt="">
+<p align="justify"><br>
+The availible software libraries were open-source and came from the DrinkShield website
+  (linked below) which took care of the ADC conversion from the MQ-3 sensor. Some changes
+  were made to the Arduino's outputs which varied the On/Off state of the relays proportional
+  to alcohol levels. This created a flashing array of Christmas lights which entertained
+  our guests and landed us in first place among the other booths.
+  <br><br></p>
+
+<h3>Results<br>
+                        
+                    </h3>
+
+
+<p align="justify"><br><br>In this video, the Christmas lights are strung up in the background 
+  around a pair of palm trees. A demo is performed by blowing an equivalent of pure Tequila 
+  directly onto the MQ-3 sensor. This registered a maximum score which activated all 8 strings
+  of lights.
+<br><br></p><iframe width="420" height="315" src="./Projects - Arduino Breathalyzer_files/saved_resource.htm" frameborder="0" allowfullscreen=""></iframe>
+
+
+
+
+
+
+<p align="justify"><br>I would recommend this project for anyone comfortable with developing on an
+  Arduino. Wiring all of the outlet receptacles turned out to be the most challenging aspect 
+  if the project. <br><br></p>
+<p>
+<a href="http://www.gfxhax.com/drinkshield/">DrinkShield Website</a>
+</p>
+
+
+
+<p>
+<a href="https://www.youtube.com/watch?v=jjLJ8guW4sA">Breathalyzer Youtube Demo</a>
+</p>
+<p>
+<a href="http://www.amazon.com/SainSmart-8-CH-8-Channel-Relay-Module/dp/B0057OC5WK">SainSmart 8-channel Relay</a>
+</p><p>
+<a href="http://www.amazon.com/Arduino-UNO-board-DIP-ATmega328P/dp/B006H06TVG">Arduino Uno</a>
+</p><a href="file:///C:/Users/Jake/Website/Projects.htm" class="btn btn-default btn-lg">Back to Projects</a>
+
+<hr>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+  <p></p>
+<ul class="list-inline intro-social-buttons">
+                            <li><a href="https://twitter.com/JakeTsuyemura" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li><a href="https://github.com/jaket6" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/profile/view?id=338026846" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul><ul class="list-inline intro-social-buttons">
+                            <li><a href="https://www.facebook.com/jake.tsuyemura" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            </li>
+                            <li><a href="https://plus.google.com/105891219501094509624/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                            </li>
+                            
+                        </ul>
+                    <div class="top-scroll">
+                        <a href="file:///E:/Bootstrap/stylish-portfolio/index.html#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
+                    </div>
+                    <hr>
+                    <p>Copyright © Jake Tsuyemura 2014</p>
+                </div>
+            </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./Projects - Arduino Breathalyzer_files/jquery-1.10.2.js"></script>
+    <script src="./Projects - Arduino Breathalyzer_files/bootstrap.js"></script>
+
+
+
+
+</body></html>

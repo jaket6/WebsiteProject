@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///C:/Users/Jake/Website/Projects%20-%204x4x4x%20LED%20Cube.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projects - 4x4x4x LED Cube</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="file:///C:/Users/Jake/Website/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="file:///C:/Users/Jake/Website/css/business-casual.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="brand">Projects</div>
+    <div class="address-bar">Hardware | Software | Design | Hobby</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="file:///E:/Bootstrap/business-casual/index.html">Business Casual</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="file:///C:/Users/Jake/Website/index.html">Home</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/About.htm">About</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/Projects.htm">Projects</a>
+                    </li>
+                    
+
+<li><a href="file:///C:/Users/Jake/Website/contactpage.htm">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                
+                <div class="col-lg-12 text-center">
+                    <img class="img-responsive img-border img-full" src="./Projects - 4x4x4x LED Cube_files/LEDcube.jpg" alt="">
+                    <h2>4x4x4 LED Cube<br>
+                        <small>March 10, 2014</small>
+                    </h2>
+                    <p align="justify"><br>This particular project is not an original design but rather, a version 
+  of a project shown on the Instructables website (linked below). 
+<br><br></p>
+
+<p align="justify">With a no more than a spare Arduino-micro and a budget of about $20, I was able
+  to recreate a 4x4x4 LED cube which ran through variety of lighting shows. Originally, the goal
+  was to create a set of ten centerpieces for the IEEE End Of The Year Banquet. What better than 
+  a flashy, geometric, handmade LED display to show off what EE students can do? Well, as it turns
+  out, something that required much less time and effort ended up being the wisest choice for a 
+  table centerpiece. Nonetheless, this weekend project turned out to be a rousing success.<br><br></p>
+
+
+
+<p align="justify">
+  Again, I am reusing pictures and material taken from the Instructable website to better 
+  illustrate this project!<br><br></p>
+
+
+
+                    
+                    
+
+<h3>Design<br>
+                        
+                    </h3>
+
+<p align="justify"><br>The design specified in this project is a simple one. The Arduino 
+  microcontroller has a combined 20 I/O pins. Sixteen of those outputs are used to control 
+  the voltage of each LED column while the remaining four outputs are used to control the
+  horizontal ground planes. The LEDs are soldered layer by layer, with special attention 
+  given to the distance between each lead pin. The anode of each LED is connected to its 
+  respective column while the cathodes are attached to a common horizontal ground plane.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - 4x4x4x LED Cube_files/LEDLayers.jpg" alt="">
+
+<p align="justify"><br>The ground planes are controlled through four 2n222 BJTs. Each BJT has
+  a ground plane connected to the its collector while the circuit's common ground is soldered
+  to the emitter. The base of the BJT is connected one of the Arduino’s I/O pins which will
+  open/close each plane’s connection to ground (effectively completing the circuit).
+  <br><br></p>
+<img class="img-responsive img-border img-full" src="./Projects - 4x4x4x LED Cube_files/LEDSchematic.jpg" alt="">
+<p align="justify"><br>The fully assembled cube can be controlled by alternating the Arduino outputs.
+  Various Light shows can be custom made or download from an open-source library (links below). 
+  For this project, I used code which was made available by the author of the Instructables tutorial.
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - 4x4x4x LED Cube_files/ArduinoCode.jpg" alt="">
+
+<p align="justify"><br>It was now time to make the fully soldered cube a little more presentable.
+  A plastic box from the local craft store provided a fitting transparent case. A hole was drilled 
+  in the side of the case to provide access for the micro-USB cable. This allowed the
+  pre-programmed cube to be plugged into any USB port and begin operation automatically. 
+  The last step was to hide the electronics located in the bottom of the case by painting 
+  the section IEEE blue. The picture below is the cube I managed to assemble.<br><br></p>
+
+
+<img class="img-responsive img-border img-full" src="./Projects - 4x4x4x LED Cube_files/Cubeoff.jpg" alt="">
+
+
+<br><h3>Results<br>
+                        
+                    </h3>
+
+
+<p align="justify"><br><br>This turned out to be a pretty simple project and I encountered no major
+  obstacles while putting it together (aside from all the soldering).  The finished design looks 
+  great in a dark room and I would recommend this project for any beginner.
+<br><br></p>
+<p align="justify">This is a picture of my Cube
+<br><br></p><img class="img-responsive img-border img-full" src="./Projects - 4x4x4x LED Cube_files/LEDCube2.jpg" alt="">
+
+
+
+
+
+
+<p align="justify"><br>This is a video of the creators cube (sorry I didn’t take a video of mine).
+  <br><br></p><iframe width="560" height="315" src="./Projects - 4x4x4x LED Cube_files/saved_resource.htm" frameborder="0" allowfullscreen=""></iframe>
+<br><br>
+<p>
+<a href="http://www.instructables.com/id/The-4x4x4-LED-cube-Arduino/?ALLSTEPS">Instructables Cube 1</a>
+</p>
+
+
+
+<p>
+<a href="http://www.instructables.com/id/LED-Cube-4x4x4/?ALLSTEPS">Instructables Cube 2</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=7iKR3QbRq74">Youtube Assemble Tutorial</a>
+</p><p>
+<a href="http://www.youtube.com/watch?v=QBONPlhAD_E">Youtube Cube Demo</a>
+</p><a class="btn btn-default btn-lg" href="file:///C:/Users/Jake/Website/Projects.htm">Back to Projects</a>
+
+<hr>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+  <p></p>
+<ul class="list-inline intro-social-buttons">
+                            <li><a href="https://twitter.com/JakeTsuyemura" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li><a href="https://github.com/jaket6" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/profile/view?id=338026846" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul><ul class="list-inline intro-social-buttons">
+                            <li><a href="https://www.facebook.com/jake.tsuyemura" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            </li>
+                            <li><a href="https://plus.google.com/105891219501094509624/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                            </li>
+                            
+                        </ul>
+                    <div class="top-scroll">
+                        <a href="file:///E:/Bootstrap/stylish-portfolio/index.html#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
+                    </div>
+                    <hr>
+                    <p>Copyright © Jake Tsuyemura 2014</p>
+                </div>
+            </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./Projects - 4x4x4x LED Cube_files/jquery-1.10.2.js"></script>
+    <script src="./Projects - 4x4x4x LED Cube_files/bootstrap.js"></script>
+
+
+
+
+</body></html>

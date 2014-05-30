@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Jake/Website/Projects%20-%20Temperature%20Controller.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projects - Temperature Controller</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="file:///C:/Users/Jake/Website/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="file:///C:/Users/Jake/Website/css/business-casual.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="brand">Projects</div>
+    <div class="address-bar">Hardware | Software | Design | Hobby</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="file:///E:/Bootstrap/business-casual/index.html">Business Casual</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="file:///C:/Users/Jake/Website/index.html">Home</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/About.htm">About</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/Projects.htm">Projects</a>
+                    </li>
+                    
+
+<li><a href="file:///C:/Users/Jake/Website/contactpage.htm">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                
+                <div class="col-lg-12 text-center">
+                    <img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/sma.jpg" alt="">
+                    <h2>Temperature Controller<br>
+                        <small>August 7, 2013</small>
+                    </h2>
+                    <p align="justify">It's not uncommon for an undergraduate to seek internship opportunities before 
+  they enter the work force. For an engineer, it is almost required to be considered for a full-time
+  position post-graduation. For this reason, the summer bridging my Junior and Senior years of 
+  college were spent at the Smithsonian Submillimeter Array as part of the Akamai Internship Program.
+<br><br></p>
+
+<p align="justify">This 8 week program places STEM students at various high-tech research facilities
+  located on the Big Island and Maui (mostly observatories). During this time, the interns are
+  provided guidance from a designated mentor while being expected to complete a professional-grade 
+  project. These projects are meant to provide training and work experience in the student's field 
+  of study. The internship concluded with a 10 minute technical presentation in front of the
+  mentors.<br><br></p>
+
+
+
+<p align="justify">My project was to design a control system that could regulate the internal
+  temperature of equipment operating on the summit of Mauna Kea. These sensitive electronics 
+  had to be kept at a stable temperature with fluctuations limited to 1 degree Celsius. The 
+  previously implemented control system had failed, leaving the equipment vulnerable to damage.
+  The unstable conditions at the summit led to temperature fluctuations up to 40 degrees 
+  Celsius between night and day. The goal was to design a stable, easy to install, control
+  system that could be implemented on any enclosure located on the summit.<br><br></p><img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/maunakea.jpg" alt="">
+
+
+
+                    
+                    
+
+<br><br><h3>Design<br>
+                        
+                    </h3>
+
+
+
+<p align="justify"><br> When I arrived at SMA, a basic prototype of the design had already
+  been assembled. It consisted of a heat source which simulated electrical waste heat, an
+  Xbox 360 fan which would provide cooling, and an Arduino UNO which controlled the fan 
+  speed via the PWM output.
+  <br><br></p><p align="justify">A thermistor was connected to the aluminum L-bracket which provided feedback data 
+  for the controller. A simple voltage divider into the analog input of the microcontroller
+  allowed us to measure the system's current operating temperature. A PID library had already 
+  been uploaded and very basics tests were performed on the first day. Kp, Ki, and Kd values 
+  for the PID loop were obtained arbitrarily.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/smallscale.jpg" alt="">
+
+<p align="justify"><br>The goal of the small-scale model was to familiarize myself with the PID system
+  while exploring different methods of tuning the PID coefficient values. Without any prior knowledge
+  in control systems, I had to do my own research to learn the basics of PID.
+  <br><br></p>
+
+<p align="justify">
+In its simplest form, PID is a closed loop system. For our purposes, the desired operating
+  temperature for our system acts as the controller's Setpoint. Feedback data is obtained
+  from the thermistor voltage (current temperature) and subtracted from the system's Setpoint.
+  This arithmetic calculates the current error in the system. The error value is then multiplied
+  by three tuned coefficients; proportional (Kp), Integral (Ki), and Derivative (Kd). These
+  values are then summed and used as the output for the control mechanism (cooling fan) which,
+  will in turn,  affect the feedback data (current temperature) of the system.
+  <br><br></p><p align="justify">
+This loop is run many times per second with each coefficient affecting the response and stability
+  of the system. An ideal combination of coefficient values would lead to a quick settling time 
+  with very little fluctuations.
+  <br><br></p>
+<img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/pidloop.jpg" alt="">
+<p align="justify"><br>Again, the values of each coefficient effectively weights the instantaneous 
+  error (Kp), the accumulated error over time (Ki), and the recent change in error (Kd). Making a
+  single coefficient too large or too small could send the system irreparable instability.
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/coefficienteffects.jpg" alt="">
+<img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/coefficientcollected.jpg" alt="">
+<p align="justify"><br>This Matlab plot displays logged data from 40 minute test periods. 
+  These test cases display extreme coefficient values and their hazardous effects on the 
+  systems stability. Some cases resulted in the system never reaching the system's Setpoint
+  (desired operating temperature) or having constant fluctuations around the Setpoint 
+  (which is what we are trying to avoid).<br><br></p><p align="justify">While manually tuning the PID controller through trial and error, we also attempted
+  to find a faster, more universal tuning method. Large variations from system to system such as ,
+  airflow, fan placement, and heating sources would all affect the ideal coefficient values. This 
+  would require each enclosure to be tested and tuned over the course of weeks, and possibly months.
+  There was  no guarantee that the custom equipment could hold up to this type of testing, so, a 
+  new approach was required. Luckily, Matlab's PID toolbox allowed us to quickly tune any system
+  after collecting a few hours of open loop data. <br><br></p>
+
+<p align="justify">This was also the perfect time to upgrade our experiment to a medium scale model. 
+  Larger fans, power-supplies, and heat sources were installed into a 19 rack and testing quickly
+  resumed.<br><br></p>
+
+
+<img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/mediumscale.jpg" alt="">
+<p align="justify"><br>
+The Matlab PID toolbox required a transfer function of the respective control system. In this case,
+  the inputs were the simulated heat sources and the output was the temperature of the enclosure.
+  Power to the heat sources were cycled on and off incrementally to record the system's response 
+  to temperature change. This data allowed Matlab to fit a Box-Jenkins model to the system which 
+  could accurately reflect the transfer function of the enclosure.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/transferfunction.jpg" alt="">
+<p align="justify"><br>
+While slowly improving the response to the system, we decided to implement a slightly more complicated
+  control loop. A cascaded PID controller allows for two traditional PID loops in series. The first
+  “slow” changing loop receives feedback data from a thermistor located further away from the heating
+  and cooling sources. This outer loop's output is the Setpoint for the inner “faster” loop. The
+  inner loop runs normally with the output directly affecting the fan speed. This implementation 
+  allows for faster settling time and a more stable reaction to temperature fluctuations. However,
+  with this improvement comes and additional three coefficients to tune. Now the six tuning variables
+  must work in unison to provide a more stable system.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/cascade.jpg" alt="">
+
+<p align="justify"><br>
+After implementing a cascade controller and obtaining an accurate transfer function, it was time to
+  get actual coefficient values out of Matlab. This PID Tuner interface made it easy to select the
+  desired settling and response time of the system.
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/pidtuner.jpg" alt="">
+
+<p align="justify"><br>
+The software was able to provide six reasonable coefficient values which had to be compared to
+  their manually tuned counterparts.
+  <br><br></p>
+
+
+
+
+<h3>Results<br>
+                        
+                    </h3>
+
+
+<br><br><img class="img-responsive img-border img-full" src="./Projects - Temperature Controller_files/results.jpg" alt="">
+
+
+
+
+
+
+<p align="justify"><br>The results of the experiment were very promising. The red and black lines 
+  displayed on the graph were almost identical. Both showed a quick rise and settling time while 
+  also staying very stable through temperature fluctuations. The green and cyan lines represent
+  the changes in ambient room temperature to which the system responded exceptionally.<br><br></p><p align="justify"><br>
+Both the manually tuned values and the Matlab generate values kept the system within 1 
+  degree Celsius of fluctuation. The similarity between the two responses meant that the 
+  software approach (Matlab) was a  viable option for tuning while eliminating the guess work
+  of the trial and error approach.
+  <br><br></p>
+<p align="justify"><br>
+I, along with the help of my mentors, were able to design a functioning control system which met all
+  of the project specifications. It was quick to set up and universally applicable to any enclosure.
+  This system will eventually be implemented in future designs at the Submillimeter Array.
+  <br><br></p>
+<p>
+<a href="http://en.wikipedia.org/wiki/PID_controller">PID Introduction</a>
+</p>
+
+
+
+<p>
+<a href="http://www.mathworks.com/videos/pid-control-made-easy-81646.html?s_iid=main_custom_CT_cta1">Matlab PID Tutorial</a>
+</p>
+<p>
+<a href="http://blog.opticontrols.com/archives/105">Cascaded Control Example</a>
+</p>
+<p>
+<a href="https://www.mathworks.com/products/robust/code-examples.html">Matlab Control Toolbox</a>
+</p>
+<p>
+<a href="file:///C:/Users/Jake/Website/file=/products/demos/shipping/robust/cascade_demo.html">Matlab Cascade Example</a>
+</p><p>
+<a href="http://playground.arduino.cc/Code/PIDLibrary">Arduino PID Library</a>
+</p><a href="file:///C:/Users/Jake/Website/Projects.htm" class="btn btn-default btn-lg">Back to Projects</a>
+
+<hr>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+  <p></p>
+<ul class="list-inline intro-social-buttons">
+                            <li><a href="https://twitter.com/JakeTsuyemura" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li><a href="https://github.com/jaket6" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/profile/view?id=338026846" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul><ul class="list-inline intro-social-buttons">
+                            <li><a href="https://www.facebook.com/jake.tsuyemura" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            </li>
+                            <li><a href="https://plus.google.com/105891219501094509624/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                            </li>
+                            
+                        </ul>
+                    <div class="top-scroll">
+                        <a href="file:///E:/Bootstrap/stylish-portfolio/index.html#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
+                    </div>
+                    <hr>
+                    <p>Copyright © Jake Tsuyemura 2014</p>
+                </div>
+            </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./Projects - Temperature Controller_files/jquery-1.10.2.js"></script>
+    <script src="./Projects - Temperature Controller_files/bootstrap.js"></script>
+
+
+
+
+</body></html>

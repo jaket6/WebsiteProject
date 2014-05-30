@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/Jake/Website/Projects%20-%20SmartStrip.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projects - SmartStrip</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="file:///C:/Users/Jake/Website/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="file:///C:/Users/Jake/Website/css/business-casual.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="brand">Projects</div>
+    <div class="address-bar">Hardware | Software | Design | Hobby</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="file:///E:/Bootstrap/business-casual/index.html">Business Casual</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="file:///C:/Users/Jake/Website/index.html">Home</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/About.htm">About</a>
+                    </li>
+                    <li><a href="file:///C:/Users/Jake/Website/Projects.htm">Projects</a>
+                    </li>
+                    
+
+<li><a href="file:///C:/Users/Jake/Website/contactpage.htm">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                
+                <div class="col-lg-12 text-center">
+                    <img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/Smartstrip.jpg" alt="">
+                    <h2>SmartStrip<br>
+                        <small>May 21, 2014</small>
+                    </h2>
+                    <p align="justify">The idea for this Senior Design Project came about on a lazy summer day.
+  After waking up at about 10 in the morning, I moved into the living room to continue loafing
+  about. My goal was simple enough, find the television remote so I could tune into some 
+  daytime ESPN programming. The only problem was the misplaced clicker which escaped my 
+  search. At that point, I decided to forgo watching TV all together and made the transition 
+  to my tablet’s internet connection.
+<br><br></p>
+
+
+<p align="justify">That’s when it hit me. I can’t even be bothered to turn on the television without
+  a remote, so why should I be bothered to turn on my lamp, my computer, or my coffee maker without 
+  one either.  Why hasn’t someone invented a way to control all of these electronics without having
+  to physically get up? Is it even possible? Can I make this? I need a Senior Project after all…
+  <br><br></p>
+
+
+
+<p align="justify">With this idea in mind, I teamed up with my trusted EE 296 and EE 396 partner
+  and we began to come up with the initial designs for this project. Many decisions such as form-factor,
+  functionality, hardware, and software components still had to be sorted out.<br><br></p>
+
+<p align="justify">So what are we even making?<br><br></p><p align="justify">After many meetings, the SmartStrip concept came into focus. Our goal was to
+  make “smart” power strip which could control the On/Off status of its respective outlets. 
+  Other features such as automatic timers, power limit settings, power consumption data, and 
+  monetary visualizations were added in during brainstorming process. All of these features 
+  would need to be displayed in some way to the users, thus, an Android application became necessary
+  to the functionality of the project. <br><br></p>
+
+
+
+                    
+                    
+
+<h3>Hardware<br>
+                        
+                    </h3>
+
+<p align="justify"><br>The hardware components were the most tangible parts of the project. We needed 
+  to find elements which could accomplish all of our objectives at a relatively low cost. First, we
+  needed way to communicate between the power strip and the smart phone/tablet. 
+  <br><br></p>
+<p align="justify">Wifi? Xbee? Bluetooth? Which one of these protocol presented the best option? Well
+  Wifi modules are relatively expensive and consume large amount of power while transmitting data.
+  These modules would enable access to the internet at the cost of added design complexity. A web
+  server which could store data and respond to client request would need to be implemented to establish
+  communication between the two devices. These obstacles eliminated Wifi from our choices of
+  communication protocol.<br><br></p>
+<p align="justify">What about Xbee? This method does allow point to point communication and is
+  relatively inexpensive. No server setup is required and a variety of online resources are
+  available for reference. But, your average tablet or smart phone does not communicate using
+  Xbee protocol. An attachment/plug-in  hardware component would have to be physically connected
+  to the device in order to establish communication. The lack of native hardware support made
+  the Xbee undesirable.<br><br></p>
+<p align="justify">The only remaining option was Bluetooth. The cheap $8 modules made it an
+  unbeatable value while its universally supported hardware made it accessible from any smart 
+  phone or tablet. The availability of online resources along with its compatibility with the 
+  Arduino microcontroller made it the most logical choice for our application.<br><br></p>
+<p align="justify">Next, the ability to control the status of each outlet had to be addressed. The only
+  viable option available to us were relays. Dealing with 120 Volts and potentially high currents
+  eliminated the  smaller, low-power control circuits. Relays (controlled mechanical switches) gave 
+  us the flexibility to fully control the On/Off status of each outlet.<br><br></p>
+<p align="justify">Finally, we needed a way to measure the power consumption of each outlet. Luckily, 
+  the fixed wall voltage of 120 Volts meant that we only needed current metering capabilities to 
+  calculate the instantaneous power of the device. Again, large voltages (and potentially high currents) 
+  eliminated the option for inline current metering circuits. This left the non-invasive option.
+  Current sensing transformers (which output a proportional voltage) allowed us to measure the current
+  flowing through each outlet without affecting the circuit's operation. <br><br></p>
+<p align="justify">Additional components such as wires, terminals, amplifier boards, and inlet switches
+  were used to complete the design. Most were only necessary for the prototype version of the product.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/DrinkShield.jpg" alt="">
+
+<br><br><h3>Software<br>
+                        
+                    </h3>
+<p align="justify"><br>The Android development environment was the best option for developing our first
+  application. This app in particular had to display large amounts of data while allowing the user
+  to operate all of the features we aimed to create. 
+  <br><br></p>
+
+<p align="justify">
+Eventually, a design/layout of the application's display was settled on. The main On/Off buttons were
+  located up top with the power consumption data being displayed directly below. Power Limit settings
+  were programmed and enabled users to turn the outlets off after the desired amount of power had been
+  consumed (i.e. 1 KWh). The bottom portion of the app held the timer setting. This allowed the users
+  to specify when the outlet would turn On/Off without having to actively change the status. 
+  <br><br></p><p align="justify">
+Finally, A Money Tracker Tab was introduced to better visualize the cost of each outlet. Live graphing
+  features displayed the instantaneous power consumption while accumulated costs for each outlet
+  were displayed below.
+  <br><br></p>
+<img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/Relays.jpg" alt=""><br><br><h3>Fabrication<br>
+                        
+                    </h3>
+
+<p align="justify"><br>After many hours of troubleshooting, the hardware was functional. It was 
+  now possible to achieve Bluetooth communication between the two devices and control the status
+  of each outlet.
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/CircuitSchematic.jpg" alt="">
+
+<p align="justify"><br>Now, it was time to retrieve power consumption information from the CT 
+  Transformers. Our group ran into an unforeseen obstacle after testing the output of the device.
+  The CT Transformer was limited to an induced current of 30 Amps. This value was scaled and
+  ran through a burden resistor which output a voltage value between 0 and 1 Volt. Unfortunately,
+  the Arduino’s 10-bit ADC had an input range of 0 to 5 Volts meaning much of the ADC's resolution
+  was not being utilized. The solution came in the form an amplifier board which took the input 
+  of the CT transformer (35mm headphone jack) and applied a gain of 4 to the output. Two low-power
+  quad-OpAmps were used to achieve this gain and improve the resolution of the device. The result
+  was a more accurate reading of each outlet's instantaneous power consumption.<br><br></p>
+
+
+<img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/Breathalyzerfull.jpg" alt="">
+<br><p align="justify"><br>
+This left us with a working hardware device. Bluetooth communication, power consumption values,
+On/Off control and power limit/timer features now operated correctly. It was now time to put everything
+in a nice, clean enclosure. The original plan was to 3D-print a custom fitting case which would
+complete the design, however, all of the on-campus 3D printers were out of commission during the
+final weeks of the semester making a custom printed case impossible. 
+  <br><br></p><p align="justify">Our only option was to construct an enclosure ourselves.
+  <br><br></p><img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/Breathalyzerfull.jpg" alt=""><br><br><p align="justify">This makeshift design left something to be desired. Future cases would
+  allow for a smaller form-factor and more professional appearance.
+  <br><br></p>
+<p align="justify"> Maybe a coat of paint will help?
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/Breathalyzerfull.jpg" alt="">
+
+<br><br><p align="justify"> The bottom of the case was left transparent so the internal circuitry could be viewed.
+  <br><br></p>
+
+<img class="img-responsive img-border img-full" src="./Projects - SmartStrip_files/Breathalyzerfull.jpg" alt="">
+
+
+
+<br><h3>Results<br>
+                        
+                    </h3>
+
+
+<p align="justify"><br><br>With the assembly completed, our final design accomplished all of the goals
+  which were set at beginning of the project. 
+<br><br></p><iframe width="420" height="315" src="./Projects - SmartStrip_files/saved_resource.htm" frameborder="0" allowfullscreen=""></iframe>
+
+
+
+
+
+
+
+
+<p align="justify"><br>This demo quickly displays the On/Off capability of each outlet,  power
+  consumption display, power limit settings, timer control, and cost visualization of the
+  application.<br><br></p><p align="justify">Our group was able to fully complete the projects intended goals which
+  utilized skills and knowledge obtained from the College of Engineering's curriculum. SmartStrip 
+  was also featured in the 2014 PACE Business Plan Competition where the group advanced into the
+  Semi-final round.<br><br></p>
+<p>
+<a href="http://openenergymonitor.org/emon/node/58">Energy Monitor Project</a>
+</p>
+
+
+
+<p>
+<a href="http://english.cxem.net/arduino/arduino5.php">Arduino Bluetooth Communication</a>
+</p>
+<p>
+<a href="http://developer.android.com/guide/topics/connectivity/bluetooth.html">Bluetooth Pairing</a>
+</p>
+<p>
+<a href="http://www.youtube.com/playlist?list=PL2F07DBCDCC01493A">Youtube Eclipse Tutorials</a>
+</p>
+<p>
+<a href="http://www.amazon.com/SainSmart-4-CH-4-Channel-Relay-Module/dp/B0057OC5O8/ref=sr_1_2?ie=UTF8&qid=1400902229&sr=8-2&keywords=sainsmart+relay">SainSmart 4-Channel Relay</a>
+</p>
+<p>
+<a href="http://www.amazon.com/013-030-Output-Non-invasive-Current-Transformer/dp/B005CTWE8A/ref=sr_1_1?ie=UTF8&qid=1400902262&sr=8-1&keywords=current+transformer">CT Transformer</a>
+</p>
+<p>
+<a href="http://www.amazon.com/Arduino-UNO-board-DIP-ATmega328P/dp/B006H06TVG">Arduino Uno</a>
+</p><p>
+<a href="http://www.amazon.com/Arduino-Wireless-Bluetooth-Transceiver-Module/dp/B0093XAV4U/ref=sr_1_1?ie=UTF8&qid=1400902304&sr=8-1&keywords=hc+06">Bluetooth Module</a>
+</p><a href="file:///C:/Users/Jake/Website/Projects.htm" class="btn btn-default btn-lg">Back to Projects</a>
+
+<hr>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+  <p></p>
+<ul class="list-inline intro-social-buttons">
+                            <li><a href="https://twitter.com/JakeTsuyemura" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li><a href="https://github.com/jaket6" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/profile/view?id=338026846" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul><ul class="list-inline intro-social-buttons">
+                            <li><a href="https://www.facebook.com/jake.tsuyemura" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                            </li>
+                            <li><a href="https://plus.google.com/105891219501094509624/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                            </li>
+                            
+                        </ul>
+                    <div class="top-scroll">
+                        <a href="file:///E:/Bootstrap/stylish-portfolio/index.html#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
+                    </div>
+                    <hr>
+                    <p>Copyright © Jake Tsuyemura 2014</p>
+                </div>
+            </div>
+
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./Projects - SmartStrip_files/jquery-1.10.2.js"></script>
+    <script src="./Projects - SmartStrip_files/bootstrap.js"></script>
+
+
+
+
+</body></html>
