@@ -42,7 +42,8 @@ audio:not([controls]) {
 template {
   display: none;
 }
-a {
+
+ {
   background: transparent;
 }
 a:active,
@@ -288,7 +289,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #308AFD;
   text-decoration: none;
 }
 a:hover,
